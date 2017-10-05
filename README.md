@@ -1,1 +1,4 @@
-# INFSCI_2710_Frontend
+# Pitt INFSCI 2701 Project Frontend
+===
+
+(Nothing decided yet...)
