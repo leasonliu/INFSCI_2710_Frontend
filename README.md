@@ -17,7 +17,7 @@ Assuming you have **nodejs** v6.10 installed!
 
 2. Ready to GO!
 
-```python run dev```
+```npm run dev```
 
 ## Reference
 
