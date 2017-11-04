@@ -1,4 +1,4 @@
-# Pitt INFSCI 2710 Project Frontend
+Pitt INFSCI 2710 Project Frontend
 ===
 
 PittMoments!
@@ -15,7 +15,7 @@ Assuming you have **nodejs** v6.10 installed!
 
 ```npm install```
 
-1. Ready to GO!
+2. Ready to GO!
 
 ```python run dev```
 
