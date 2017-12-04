@@ -16,7 +16,7 @@
     <div class="container">
         <div class="card card-container">
             <p class="profile-name-card">Signup at PittMoments</p>
-            <form class="form-signinup" novalidate>
+            <form class="form-signinup" id="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="col">
                         <input type="text" class="form-control" id="inputUid" placeholder="User Name" required>
@@ -64,27 +64,27 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col">
+                    <div class="col" style="margin-top: 10px">
                         <label class="custom-control custom-radio">
-                                    <input id="in_male" name="radio" type="radio" class="custom-control-input">
+                                    <input id="in_male" name="radio" type="radio" class="custom-control-input" required>
                                     <span class="custom-control-indicator"></span>
                                     <span class="custom-control-description">Male</span>
                                 </label>
                         <label class="custom-control custom-radio">
-                                    <input id="in_female" name="radio" type="radio" class="custom-control-input">
+                                    <input id="in_female" name="radio" type="radio" class="custom-control-input" required>
                                     <span class="custom-control-indicator"></span>
                                     <span class="custom-control-description">Female</span>
                                 </label>
                         <label class="custom-control custom-radio">
-                                    <input id="in_no" name="radio" type="radio" class="custom-control-input">
+                                    <input id="in_no" name="radio" type="radio" class="custom-control-input" required>
                                     <span class="custom-control-indicator"></span>
                                     <span class="custom-control-description">Secret</span>
                                 </label>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col"><input type="password" class="form-control" id="input_pw1" placeholder="Password"></div>
-                    <div class="col"><input type="password" class="form-control" id="input_pw2" placeholder="Repeat it"></div>
+                    <div class="col"><input type="password" class="form-control" id="input_pw1" required placeholder="Password"></div>
+                    <div class="col"><input type="password" class="form-control" id="input_pw2" required placeholder="Repeat it"></div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">

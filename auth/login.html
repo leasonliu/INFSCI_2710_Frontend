@@ -15,12 +15,18 @@
     <div class="container">
         <div class="card card-container">
             <p class="profile-name-card">Log in to PittMoments</p>
-            <form class="form-signinup">
+            <form class="form-signinup" id="needs-validation" novalidate>
                 <div class="form-row">
                     <input type="text" id="inputEmail" class="form-control" placeholder="User Name" required autofocus>
+                    <div class="invalid-feedback">
+                        Please input your username.
+                    </div>
                 </div>
                 <div class="form-row">
                     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <div class="invalid-feedback">
+                        Please input your password.
+                    </div>
                 </div>
                 <div class="form-row">
                     <button class="btn btn-lg btn-primary btn-block btn-signinup" type="submit">Sign in</button>
