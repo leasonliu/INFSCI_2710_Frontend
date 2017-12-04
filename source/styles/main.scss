@@ -1,7 +1,3 @@
-body {
-    $blank_top_bot: 20px;
-    padding-top: $blank_top_bot;
-    #root {
-        margin-bottom: $blank_top_bot;
-    }
+::selection {
+    background: rgb(133, 199, 224); // Better Skyblue
 }

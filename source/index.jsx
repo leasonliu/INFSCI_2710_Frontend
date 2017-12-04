@@ -1,17 +1,23 @@
+/**
+ * Website Index Router/Dir
+ */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import {Provider} from 'react-redux';
 
-import HomePage from './components/HomePage/HomePage.jsx';
+import {configureFakeBackend, store} from './_helper';
+import App from './components/App/App.jsx';
 
 require('./styles/main.scss');
 
+// TODO: Remove - setup fake backend
+configureFakeBackend();
+
+// Redux basic wrapper
 const indexPage = (
-    <Router>
-        <div>
-            <HomePage />
-        </div>
-    </Router>
+  <Provider store={store}>
+    <App/>
+  </Provider>
 );
 
-ReactDOM.render(indexPage, document.getElementById('root'));
+ReactDOM.render(indexPage, document.getElementById('root-app'));
