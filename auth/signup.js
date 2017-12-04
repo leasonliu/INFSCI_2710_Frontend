@@ -86,7 +86,8 @@ app.controller('myCtrl', function($scope, $http, $filter, $sce) {
                 console.log(e);
                 if (e.status == 200) {
                     // Good reg
-                    window.location = "login.html";
+                    // window.location = "login.html";
+                    $('#regSuccess').modal('show');
                 } else if (e.status == 404) {
                     showErrMsg('???');
                 } else if (e.status == 403) {
@@ -103,7 +104,6 @@ app.controller('myCtrl', function($scope, $http, $filter, $sce) {
             },
 
         });
-
     });
 
 });
