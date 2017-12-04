@@ -32,30 +32,60 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div id="inputDOB" class="col">
-                        <input type="text" class="form-control" required placeholder="DoB (MM/DD/YYYY)">
+                    <div class="col">
+                        <input type="email" class="form-control" id="inputEM" required placeholder="Email address">
+                        <div class="invalid-feedback">
+                            Please provide your email.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="inputNick" required placeholder="Nickname">
+                        <div class="invalid-feedback">
+                            Please provide your nickname.
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="inputDoB" required placeholder="DoB (MM/DD/YYYY)">
                         <div class="invalid-feedback">
                             Please provide your vaild DOB.
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid state.
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-                        <div class="invalid-feedback">
-                            Please provide a valid zip.
-                        </div>
+                    <div class="col">
+                        <label class="custom-control custom-radio">
+                                    <input id="in_male" name="radio" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Male</span>
+                                </label>
+                        <label class="custom-control custom-radio">
+                                    <input id="in_female" name="radio" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Female</span>
+                                </label>
+                        <label class="custom-control custom-radio">
+                                    <input id="in_no" name="radio" type="radio" class="custom-control-input">
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Secret</span>
+                                </label>
                     </div>
                 </div>
-                <div class="col"><button class="btn btn-lg btn-primary btn-block btn-signinup" type="submit">Sign up</button></div>
+                <div class="form-row">
+                    <div class="col"><input type="password" class="form-control" id="input_pw1" placeholder="Password"></div>
+                    <div class="col"><input type="password" class="form-control" id="input_pw2" placeholder="Repeat it"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <a href="./login.html" class="btn btn-lg btn-primary btn-block btn-signinup" style="margin: 10px 0px;" role="button">Sign in</a>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <button class="btn btn-lg btn-primary btn-block btn-signinup" type="submit">Sign up</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
