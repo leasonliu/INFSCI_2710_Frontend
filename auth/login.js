@@ -3,6 +3,7 @@
 // Prefix for easier debug
 var serverPrefix = 'http://127.0.0.1:8888';
 var app = angular.module('myApp', []);
+var alertObj = $('.alert');
 
 // Disabling form submissions if there are invalid fields
 function set_up_vaild() {
@@ -24,25 +25,25 @@ function showErrMsg(msg) {
     if (msg == '') {} else {
         $('#alertmsg').html(msg);
     }
-    $('.alert').fadeIn();
+    alertObj.stop().fadeTo('slow', 1);
     setTimeout(function() {
-        $('.alert').fadeOut();
-    }, 3000);
+        alertObj.stop().fadeTo('slow', 0, function() {
+            alertObj.hide();
+        });
+    }, 2500);
 }
 
-app.controller('myCtrl', function($scope, $http, $filter, $sce) {
-    $scope.uid = "";
-    $scope.pass = "";
-    $scope.err = "";
+app.controller('myLogin', function($scope, $http, $filter, $sce) {
 
     $("#login").submit(function(e) {
+        alertObj.hide();
         $('#btn-login').addClass('disabled');
         e.preventDefault();
 
         var uid = $('#inputUid').val();
         var pass = $('#inputPwd').val();
 
-
+        // Send request to server
         $.ajax({
             url: serverPrefix + '/login',
             data: 'userID=' + uid + '&password=' + pass,
