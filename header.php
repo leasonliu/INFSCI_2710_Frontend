@@ -25,6 +25,11 @@ is_logged_in();
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <span class="navbar-text">
+              Hi <?php echo($_SESSION['nickname']); ?>!
+            </span>
+          </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
