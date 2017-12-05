@@ -19,5 +19,8 @@ $_SESSION["nickname"] = $_POST['nick'];
 $_SESSION["firstname"] = $_POST['fn'];
 $_SESSION["lastname"] = $_POST['ln'];
 $_SESSION["gender"] = $_POST['s'];
+$_SESSION["dob"] = $_POST['dob'];
+$_SESSION["email"] = $_POST['m'];
+$_SESSION["whatsup"] = $_POST['w'];
 
 echo 'GOOD';

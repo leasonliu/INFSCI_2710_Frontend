@@ -59,13 +59,16 @@ app.controller('myLogin', function($scope, $http, $filter, $sce) {
                 var eee = data;
                 if (eee.status == 200) {
                     var user = JSON.parse(eee.data)[0];
-                    // Tmp solution: update local session.
+
+                    // Tmp solution: local state manage
                     $.ajax({
                         url: localPrefix + '/helper/tmp_session.php',
                         type: 'POST',
                         data: 'login_status=20098&is_admin=' + user.is_admin +
                             '&uid=' + user.userID + '&nick=' + user.nickname +
-                            '&fn=' + user.firstname + '&ln=' + user.lastname + '&s=' + user.gender,
+                            '&fn=' + user.firstname + '&ln=' + user.lastname +
+                            '&s=' + user.gender + '&m=' + user.email +
+                            '&w=' + user.whatsup + '&dob=' + user.DOB,
 
                         success: function(data) {
                             if (data == 'GOOD')

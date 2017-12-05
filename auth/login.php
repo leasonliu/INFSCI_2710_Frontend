@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['login']) and $_SESSION["login"] == "ok") {
+    header('location: /index.php');
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -41,7 +48,7 @@
                     <button id="btn-login" class="btn btn-lg btn-primary btn-block btn-signinup" type="submit">Sign in</button>
                 </div>
             </form>
-            <a href="./signup.html" class="sign-up">Click here to Sign-up</a>
+            <a href="./signup.php" class="sign-up">Click here to Sign-up</a>
         </div>
     </div>
 

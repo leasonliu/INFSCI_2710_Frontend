@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['login']) and $_SESSION["login"] == "ok") {
+    header('location: /index.php');
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -96,7 +103,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <a href="./login.html" class="btn btn-lg btn-primary btn-block btn-signinup" style="margin: 10px 0px;" role="button">Sign in</a>
+                        <a href="./login.php" class="btn btn-lg btn-primary btn-block btn-signinup" style="margin: 10px 0px;" role="button">Sign in</a>
                     </div>
                     <div class="form-group col-md-8">
                         <button id="btn-signup" class="btn btn-lg btn-primary btn-block btn-signinup" type="submit">Sign up</button>
@@ -120,7 +127,7 @@
                     You have successfully registered an account at PittMoments!
                 </div>
                 <div class="modal-footer">
-                    <a href="./login.html" type="button" class="btn btn-primary" role="button">Goto Login</a>
+                    <a href="./login.php" type="button" class="btn btn-primary" role="button">Goto Login</a>
                 </div>
             </div>
         </div>

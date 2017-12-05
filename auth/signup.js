@@ -68,30 +68,28 @@ app.controller('myCtrl', function($scope, $http, $filter, $sce) {
         }
 
         // Check gender
-        var gender = 'unspecified';
+        var gender = 2;
         if ($('#in_male').is(":checked")) {
-            gender = 'male';
+            gender = 0;
         } else if ($('#in_female').is(":checked")) {
-            gender = 'female';
+            gender = 1;
         }
 
         // Send request to server
         $.ajax({
-            url: serverPrefix + '/regist',
-            data: '...',
+            url: serverPrefix + '/register',
             type: 'POST',
+            data: 'userID=' + uid + '&password=' + pass2 +
+                '&nickname=' + nickname + '&firstname=' + f_name +
+                '&lastname=' + l_name + '&gender=' + gender +
+                '&email=' + email + '&DOB=' + trueDob.format(),
 
             success: function(data) {
                 var e = data;
                 console.log(e);
                 if (e.status == 200) {
                     // Good reg
-                    // window.location = "login.html";
                     $('#regSuccess').modal('show');
-                } else if (e.status == 404) {
-                    showErrMsg('???');
-                } else if (e.status == 403) {
-                    showErrMsg('???');
                 } else {
                     showErrMsg('');
                 }

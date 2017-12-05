@@ -16,7 +16,7 @@ function _die_perm() {
  */
 function is_logged_in() {
     if($_SESSION["login"] != "ok" or is_null($_SESSION["role"]) == TRUE) {
-        header('location: auth/login.html');
+        header('location: auth/login.php');
         die('Not logged in!');
     }
 }
