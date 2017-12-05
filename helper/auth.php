@@ -15,7 +15,7 @@ function _die_perm() {
  * Check whether current user is logged in
  */
 function is_logged_in() {
-    if($_SESSION["login"] != "ok" or is_null($_SESSION["role"]) == TRUE) {
+    if(is_null($_SESSION["login"]) or $_SESSION["login"] != "ok" or is_null($_SESSION["role"])) {
         header('location: auth/login.php');
         die('Not logged in!');
     }
@@ -26,6 +26,8 @@ function is_logged_in() {
 * 1 = Admin, 2 = User
 */
 function check_permission($target_role_id) {
+    if(!isset($_SESSION["role"])) _die_perm();
+
     $rid = $_SESSION["role"];
     switch ($target_role_id) {
         // Write like this to be more flexible when changing permission required.
