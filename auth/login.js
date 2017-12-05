@@ -1,7 +1,8 @@
 "use strict";
 
 // Prefix for easier debug
-var serverPrefix = 'http://127.0.0.1:8888';
+var serverPrefix = 'http://127.0.0.1:8000';
+var localPrefix = 'http://127.0.0.1:8888';
 var app = angular.module('myApp', []);
 var alertObj = $('.alert');
 
@@ -43,6 +44,11 @@ app.controller('myLogin', function($scope, $http, $filter, $sce) {
         var uid = $('#inputUid').val();
         var pass = $('#inputPwd').val();
 
+        if (uid.indexOf('.') !== -1) {
+            showErrMsg('Invalid username!');
+            return;
+        }
+
         // Send request to server
         $.ajax({
             url: serverPrefix + '/login',
@@ -50,14 +56,34 @@ app.controller('myLogin', function($scope, $http, $filter, $sce) {
             type: 'POST',
 
             success: function(data) {
-                var e = data;
-                console.log(e);
-                if (e.status == 200) {
-                    // Good login
-                    window.location = "index.php";
-                } else if (e.status == 404) {
+                var eee = data;
+                if (eee.status == 200) {
+                    var user = JSON.parse(eee.data)[0];
+                    // Tmp solution: update local session.
+                    $.ajax({
+                        url: localPrefix + '/helper/tmp_session.php',
+                        type: 'POST',
+                        data: 'login_status=20098&is_admin=' + user.is_admin +
+                            '&uid=' + user.userID + '&nick=' + user.nickname +
+                            '&fn=' + user.firstname + '&ln=' + user.lastname + '&s=' + user.gender,
+
+                        success: function(data) {
+                            if (data == 'GOOD')
+                                window.location = "/index.php";
+                            else
+                                showErrMsg('');
+                        },
+
+                        error: function(error) {
+                            showErrMsg('');
+                            console.log(error);
+                        },
+
+                    });
+
+                } else if (eee.status == 404) {
                     showErrMsg('Wrong UID or password.');
-                } else if (e.status == 403) {
+                } else if (eee.status == 403) {
                     showErrMsg('Your account is blocked.');
                 } else {
                     showErrMsg('');
