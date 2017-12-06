@@ -14,14 +14,13 @@ if(isset($_SESSION['login']) and $_SESSION["login"] == "ok") {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./signup.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div class="container" ng-app="myApp" ng-controller="myCtrl">
-        <div class="row" style="margin-top: 15px;">
+    <div class="container">
+        <div class="row">
             <div class="col-12 col-md-8"></div>
             <div class="col-6 col-md-4">
                 <div class="alert alert-danger fade show" role="alert" style="display: none">
@@ -44,13 +43,13 @@ if(isset($_SESSION['login']) and $_SESSION["login"] == "ok") {
                     <div class="col">
                         <input type="text" class="form-control" id="inputFN" placeholder="First name" required>
                         <div class="invalid-feedback">
-                            Please provide a valid first name.
+                            Please provide.
                         </div>
                     </div>
                     <div class="col">
                         <input type="text" class="form-control" id="inputLN" placeholder="Last name" required>
                         <div class="invalid-feedback">
-                            Please provide a valid last name.
+                            Please provide.
                         </div>
                     </div>
                 </div>

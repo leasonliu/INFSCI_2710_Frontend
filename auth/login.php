@@ -15,12 +15,11 @@ if(isset($_SESSION['login']) and $_SESSION["login"] == "ok") {
     <link rel="stylesheet" href="./login.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 </head>
 
 <body>
 
-    <div class="container" ng-app="myApp" ng-controller="myLogin">
+    <div class="container">
         <div class="row" style="margin-top: 15px;">
             <div class="col-12 col-md-8"></div>
             <div class="col-6 col-md-4">

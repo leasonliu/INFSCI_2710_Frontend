@@ -1,4 +1,5 @@
 <?php
+include('../helper/config.php');
 include('../helper/auth.php');
 check_permission(1);
 ?>

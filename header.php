@@ -1,4 +1,5 @@
 <?php
+include('helper/config.php');
 include('helper/auth.php');
 is_logged_in();
 ?>
