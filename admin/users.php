@@ -10,15 +10,24 @@ include('./leftmenu.php');
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
+            <th>UID</th>
+            <th>Nickname</th>
+            <th>E-Mail</th>
+            <th>Created Time</th>
+            <th>Last Login</th>
+            <th>Is active</th>
           </tr>
         </thead>
         <tbody>
           <!-- TODO: ng-repeat and Backend API -->
+          <tr>
+              <td>1</td>
+              <td>Idiot</td>
+              <td>tony@dreamprc.com</td>
+              <td>2017/12/06 18</td>
+              <td>2017/12/06 21</td>
+              <td>1</td>
+          </tr>
         </tbody>
       </table>
     </div>
