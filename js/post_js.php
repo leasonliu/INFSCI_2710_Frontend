@@ -1,7 +1,7 @@
 <?php
 include('../helper/auth.php');
-is_logged_in();
 header('Content-Type: application/javascript');
+is_logged_in();
 ?>
 
 // Variable to store your files

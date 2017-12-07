@@ -86,6 +86,8 @@ $('#signup').submit(function(e) {
             if (e.status == 200) {
                 // Good reg
                 $('#regSuccess').modal('show');
+            } else if (e.status == 404) {
+                showErrMsg('Duplicate User ID.');
             } else {
                 showErrMsg('');
             }

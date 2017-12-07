@@ -17,7 +17,7 @@ include('header.php');
           Post something
         </div>
         <div class="card-body">
-          <h4 class="card-title">Show your moments here!</h4>
+          <h4 class="card-title">Show your moments!</h4>
           <form id="new-post" method="post" novalidate>
             <div class="form-group">
               <label class="custom-file">
@@ -26,7 +26,7 @@ include('header.php');
               </label>
             </div>
             <div class="form-group">
-              <textarea class="form-control" id="contents" rows="2" required placeholder="What's your thoughs?"></textarea>
+              <textarea class="form-control" id="contents" rows="3" required placeholder="What's your thoughs?"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" id="btn-post">Post!</button>
           </form>

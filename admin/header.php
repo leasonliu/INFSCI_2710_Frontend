@@ -11,13 +11,13 @@ check_permission(1);
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pitt-Moments</title>
+    <title>Pitt-Moments Admin</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
   </head>
 
-  <body>
+  <body ng-app="myApp" ng-controller="myCtrl">
 
   <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -34,7 +34,7 @@ check_permission(1);
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/index.php">Go Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Anything...</a>
@@ -42,4 +42,4 @@ check_permission(1);
           </ul>
         </div>
       </nav>
-    </header>
+  </header>

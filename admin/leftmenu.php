@@ -1,18 +1,18 @@
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+    <nav id="sidebar-nav" class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Users <span class="sr-only">(current)</span></a>
+          <a id="nav-home" class="nav-link" href="./dashboard.php">Overview</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Posts</a>
+          <a id="nav-u" class="nav-link" href="./users.php">Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reports</a>
+          <a id="nav-p" class="nav-link" href="./posts.php">Posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">System Info</a>
+          <a id="nav-r" class="nav-link" href="./reports.php">Reports</a>
         </li>
       </ul>
 

@@ -4,7 +4,7 @@ include('./leftmenu.php');
 ?>
 
   <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-    <h1>Dashboard</h1>
+    <h1>Overview</h1>
 
     <section class="row text-center placeholders">
       <div class="col-6 col-sm-3 placeholder">
@@ -29,28 +29,15 @@ include('./leftmenu.php');
       </div>
     </section>
 
-    <h2>Manage Users</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-          </tr>
-        </thead>
-        <tbody>
-            <!-- TODO: ng-repeat and Backend API -->
-        </tbody>
-      </table>
-    </div>
   </main>
 
   <!-- Match leftmenu.php -->
   </div>
   </div>
+
+  <script>
+    document.getElementById('nav-home').classList.add('active');
+  </script>
 
   <?php
 include('./footer.php');
