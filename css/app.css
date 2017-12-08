@@ -105,9 +105,13 @@ body>.container-fluid {
 }
 
 .moment-card-img-top {
+    zoom: 2;
     display: block;
+    margin: auto;
+    height: auto;
+    max-height: 80px;
     width: auto;
-    height: 200px;
+    max-width: 100%;
 }
 
 .moment-card-title {

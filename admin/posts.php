@@ -25,7 +25,11 @@ include('./leftmenu.php');
             <th scope="row">{{$index + 1}}</th>
             <td>{{ i.pid }}</td>
             <td>{{ i.userID }}</td>
-            <td><a href="<?php echo SERVER_PREFIX; ?>{{ i.pic_id }}" target=_blank>View...</a></td>
+            <td>
+              <a data-toggle="lightbox" data-title="Post picture" data-type="image" data-remote="<?php echo SERVER_PREFIX; ?>{{ i.pic_id }}" href="#">View it
+                <img class="img-fluid">
+              </a>
+            </td>
             <td style="max-width: 10%">{{ i.contents.length>40 ? i.contents.substring(0,40)+'...' : i.contents }}</td>
             <td>{{ i.timestamp }}</td>
             <td>
@@ -40,6 +44,7 @@ include('./leftmenu.php');
 
   <script>
     document.getElementById('nav-p').classList.add('active');
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) { event.preventDefault(); $(this).ekkoLightbox();} );
   </script>
 
   <?php

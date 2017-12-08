@@ -4,10 +4,12 @@ include('header.php');
 
   <main role="main" class="container-fluid">
     <div class="row">
-      <div class="col-2"></div>
+      <div class="col-3 mt-3">
+        <div>It's a placeholder. Could be some ads or other info here...</div>
+      </div>
 
       <!-- Left main feeds -->
-      <div class="col-7 mt-3">
+      <div class="col-5 mt-3">
 
         <div ng-if="!viewable_posts" class="alert alert-primary text-center" role="alert">Loading feeds data...</div>
         <div ng-if="viewable_posts && viewable_posts.length==0" class="alert alert-secondary text-center" role="alert">Currently, there are no posts for you!</div>
@@ -16,13 +18,16 @@ include('header.php');
           <div class="moment-card moment-card-inverse moment-card-info">
             <div class="moment-card-block">
               <figure class="moment-profile moment-profile-inline">
-                  <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="moment-profile-avatar" alt="">
+                  <img src="<?php echo SERVER_PREFIX; ?>{{ i.avatar }}" class="moment-profile-avatar" alt="Post user avatar">
               </figure>
               <h4 class="moment-card-title">{{ i.userID }}</h4>
               <div class="moment-card-text"><span class="text-muted">Thoughts:</span> {{ i.contents }}</div>
             </div>
-            <div class="text-center">
-              <img class="moment-card-img-top" src="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}">
+            <div>
+              <!-- Click to view post -->
+              <a data-toggle="lightbox" data-title="Moment" data-footer="{{ i.contents }}" data-type="image" data-remote="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}" href="#">
+                <img class="moment-card-img-top" src="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}" class="img-fluid">
+              </a>
             </div>
             <div class="moment-card-footer">
               <small>Post on: {{ i.timestamp }}</small>
@@ -31,13 +36,15 @@ include('header.php');
           </div>
         </div>
 
-        
       </div>
       <!-- Left main feeds end -->
 
+      <div class="col-1"></div>
+
       <!-- Right info/post -->
       <div class="col-3">
-        <div class="row mt-3 ml-auto">
+      <div ng-if="!my_info" class="alert alert-secondary text-center" role="alert">Loading your information...</div>
+        <div ng-if="my_info" class="row mt-3 mr-auto">
           <div class='card card-profile text-center'>
             <div class='card-img-top <?php if($_SESSION["gender"]==1) echo('bg-danger'); else echo('bg-dark'); ?>'></div>
             <div class='card-block'>
@@ -60,6 +67,10 @@ include('header.php');
 
     </div>
   </main>
+
+  <script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) { event.preventDefault(); $(this).ekkoLightbox();} );
+  </script>
 
   <?php
 include('footer.php');
