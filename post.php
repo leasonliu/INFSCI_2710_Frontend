@@ -33,6 +33,7 @@ include('header.php');
                 You must write something...
               </div>
             </div>
+            <button class="btn btn-secendary btn-block" onclick="history.back()">Cancel</button>
             <button type="submit" class="btn btn-primary btn-block" id="btn-post">Post!</button>
           </form>
         </div>

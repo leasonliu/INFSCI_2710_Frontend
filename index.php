@@ -27,7 +27,7 @@ include('header.php');
           <div class='card card-profile text-center'>
             <div class='card-img-top <?php if($_SESSION["gender"]==1) echo('bg-danger'); else echo('bg-dark'); ?>'></div>
             <div class='card-block'>
-              <img alt='User avatar' class='card-img-profile' src='<?php echo(SERVER_PREFIX); ?>{{ my_info.avatar }}'>
+              <img alt='User avatar' height="150px" width="150px" class='card-img-profile img-fluid' src='<?php echo(SERVER_PREFIX); ?>{{ my_info.avatar }}'>
               <h4 class='card-title'>{{ my_info.firstname + ' ' + my_info.lastname }}
                 <small>{{ my_info.whatsup }}</br></br>E-Mail: {{my_info.email}}</br>DOB: {{my_info.DOB.substring(0,10)}}</small>
               </h4>

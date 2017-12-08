@@ -5,10 +5,6 @@ is_logged_in();
 ?>
 "use strict";
 
-// Prefix for easier debug
-var serverPrefix = 'http://127.0.0.1:8000';
-var localPrefix = 'http://127.0.0.1:8888';
-
 // Variable to store your files
 var serverPrefix = 'http://127.0.0.1:8000';
 
@@ -32,7 +28,7 @@ $('input[type=file]').on('change', prepareUpload);
 
 function prepareUpload(event) {
     if (event.target.files[0].size > 2000000) {
-        showErrMsg('File too large!');
+        showErrMsg('File too large, should < 2MB!');
         document.getElementById('pic_id').value = '';
         return;
     }
