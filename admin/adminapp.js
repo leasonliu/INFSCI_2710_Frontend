@@ -51,6 +51,26 @@ app.controller('pmAdmin', function($scope, $http, $ngConfirm) {
             $scope.all_reports = response.data.data;
         }, defaultErrHandle);
 
+    $scope.deletePost = function(pid) {
+        $ngConfirm({
+            title: 'Deleteing post!',
+            content: 'You are about to delete pid: "' + pid + '", proceed?',
+            type: 'red',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Yes block',
+                    btnClass: 'btn-red',
+                    action: function() {
+                        $http.post(serverPrefix + '/admin/deletePosts', "pid=" + pid, postConfig)
+                            .then(function(response) { location.reload(); }, defaultErrHandle);
+                    }
+                },
+                close: function() {}
+            }
+        });
+    };
+
     $scope.inactiveUser = function(uid) {
         $ngConfirm({
             title: 'Inactiving ' + uid + '!',

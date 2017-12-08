@@ -8,7 +8,7 @@ include('./leftmenu.php');
 
     <div ng-if="!all_posts" class="alert alert-primary text-center" role="alert">Loading data...</div>
     <div ng-show="all_posts" class="table-responsive">
-      <table class="table table-striped">
+      <table class="table table-striped table-hover">
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
@@ -22,13 +22,15 @@ include('./leftmenu.php');
         </thead>
         <tbody>
           <tr ng-repeat="i in all_posts">
-            <th scope="row">{{$index +1}}</th>
-            <td>1</td>
-            <td>Idiot</td>
-            <td>tony@dreamprc.com</td>
-            <td>Fuck all these</td>
-            <td>2017/12/06 21</td>
-            <td>1</td>
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{ i.pid }}</td>
+            <td>{{ i.userID }}</td>
+            <td><a href="<?php echo SERVER_PREFIX; ?>{{ i.pic_id }}" target=_blank>View...</a></td>
+            <td style="max-width: 10%">{{ i.contents.length>40 ? i.contents.substring(0,40)+'...' : i.contents }}</td>
+            <td>{{ i.timestamp }}</td>
+            <td>
+            <button ng-click="deletePost(i.pid)" type="button" class="btn btn-danger btn-block">Delete</button>
+            </td>
           </tr>
         </tbody>
       </table>

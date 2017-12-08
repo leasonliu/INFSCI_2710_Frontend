@@ -11,6 +11,8 @@ var defaultErrHandle = function(err) {
 var app = angular.module('pmApp', ['cp.ngConfirm']);
 app.controller('pmIndex', function($scope, $http, $ngConfirm) {
 
+    $scope.serverPrefix = serverPrefix;
+
     $scope.logoutCheck = function() {
         $ngConfirm({
             title: 'Logout?',

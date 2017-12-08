@@ -17,7 +17,7 @@ include('./leftmenu.php');
             <th scope="col">E-Mail</th>
             <th scope="col">Created Time</th>
             <th scope="col">Last Login</th>
-            <th scope="col">User status</th>
+            <th scope="col">User Operation</th>
           </tr>
         </thead>
         <tbody>
