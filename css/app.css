@@ -98,9 +98,9 @@ body>.container-fluid {
     font-size: 1em;
     position: relative;
     margin: 0;
-    padding: 1em;
+    padding: 5px 1em;
     border: none;
-    border-top: 1px solid rgba(34, 36, 38, .1);
+    border-bottom: 1px solid rgba(34, 36, 38, .1);
     box-shadow: none;
 }
 
@@ -118,7 +118,6 @@ body>.container-fluid {
 
 .moment-card-text {
     clear: both;
-    margin-top: .5em;
     color: rgba(0, 0, 0, .68);
 }
 
@@ -167,5 +166,5 @@ body>.container-fluid {
 .moment-profile-inline~.moment-card-title {
     display: inline-block;
     margin-left: 4px;
-    vertical-align: top;
+    vertical-align: bottom;
 }

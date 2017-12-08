@@ -14,15 +14,15 @@ include('header.php');
         <!-- Change with correct grid/laout and ng-repeat -->
         <div ng-show="viewable_posts.length>0" class="form-group" ng-repeat="i in viewable_posts">
           <div class="moment-card moment-card-inverse moment-card-info">
-            <div class="text-center">
-              <img class="moment-card-img-top" src="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}">
-            </div>
             <div class="moment-card-block">
               <figure class="moment-profile moment-profile-inline">
                   <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="moment-profile-avatar" alt="">
               </figure>
               <h4 class="moment-card-title">{{ i.userID }}</h4>
-              <div class="moment-card-text">{{ i.contents }}</div>
+              <div class="moment-card-text"><span class="text-muted">Thoughts:</span> {{ i.contents }}</div>
+            </div>
+            <div class="text-center">
+              <img class="moment-card-img-top" src="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}">
             </div>
             <div class="moment-card-footer">
               <small>Post on: {{ i.timestamp }}</small>
