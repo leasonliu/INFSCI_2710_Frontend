@@ -34,6 +34,7 @@ body>.container-fluid {
 }
 
 .card-profile {
+    position: fixed;
     width: 280px;
     margin: 0 auto;
     background-color: #ececec;

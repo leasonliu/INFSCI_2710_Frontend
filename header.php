@@ -38,9 +38,6 @@ is_logged_in();
             <li class="nav-item">
               <a class="nav-link" href="/index.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/post.php">Post New</a>
-            </li>
             <?php if($_SESSION['role']==1) {?>
             <li class="nav-item">
               <a class="nav-link" href="/admin/dashboard.php">Dashboard</a>

@@ -49,8 +49,8 @@ include('header.php');
                 <small></br>E-Mail: {{my_info.email}}</br>DOB: {{my_info.DOB.substring(0,10)}}</small>
               </h4>
               <div class='card-links'>
-                <a role="button" class="btn btn-outline-success btn-block" href="./post.php">Post</a>
-                <a role="button" class="btn btn-outline-primary btn-block" href="./changeinfo.php">Edit</a>
+                <a role="button" class="btn btn-outline-success btn-block" href="./post.php">Post Moment</a>
+                <a role="button" class="btn btn-outline-primary btn-block" href="./changeinfo.php">Edit Profile</a>
               </div>
             </div>
           </div>

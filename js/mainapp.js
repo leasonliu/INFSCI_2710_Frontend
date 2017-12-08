@@ -27,7 +27,6 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
     $http.get(serverPrefix + '/post/' + uid)
         .then(function(response) {
             $scope.viewable_posts = response.data.data;
-            console.log($scope.viewable_posts);
         }, defaultErrHandle);
 
     $scope.logoutCheck = function() {
@@ -48,25 +47,55 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
         });
     };
 
-});
+    $('#form-new-whatsup').submit(function(e) {
+        var wu = $('#whatsup-text').val();
 
-$('#form-new-whatsup').submit(function(e) {
-    var wu = $('#whatsup-text').val();
+        $.ajax({
+            url: serverPrefix + '/my/whatsup',
+            data: 'userID=' + uid + '&whatsup=' + wu,
+            type: 'POST',
 
-    $.ajax({
-        url: serverPrefix + '/my/whatsup',
-        data: 'userID=' + uid + '&whatsup=' + wu,
-        type: 'POST',
+            success: function(data) {
+                if (data.status == '200') {
+                    $ngConfirm({
+                        backgroundDismiss: true,
+                        title: 'Update success!',
+                        content: 'You what\'s up has been updated successfully',
+                        type: 'green',
+                        autoClose: 'close|2000',
+                        buttons: {
+                            close: function() {
+                                $('#whatsup-text').blur();
+                            }
+                        }
+                    });
+                } else {
+                    $ngConfirm({
+                        title: 'Update failed',
+                        content: 'Fail to update your what\'s up :(',
+                        type: 'red',
+                        autoClose: 'close|2000',
+                        buttons: {
+                            close: function() {}
+                        }
+                    });
+                }
+            },
 
-        success: function(data) {
-            if (data.status == '200') {
-                location.reload();
-            }
-        },
+            error: function(err) {
+                $ngConfirm({
+                    title: 'Update failed',
+                    content: 'Fail to update your what\'s up :(',
+                    type: 'red',
+                    autoClose: 'close|2000',
+                    buttons: {
+                        close: function() {}
+                    }
+                });
+                console.log(err);
+            },
+        });
 
-        error: function(err) {
-            console.log(err);
-        },
     });
 
 });
