@@ -24,22 +24,17 @@ include('header.php');
       <div class="col-3">
         <div class="row mt-3">
           <div class='card card-profile text-center'>
-            <img alt='' class='card-img-top' src='https://unsplash.it/340/160?image=354'>
+            <div class='card-img-top <?php if($_SESSION["gender"]==1) echo('bg-danger'); else echo('bg-dark'); ?>'></div>
             <div class='card-block'>
               <img alt='User avatar' class='card-img-profile' src='<?php echo(SERVER_PREFIX . $_SESSION["avatar"]); ?>'>
               <h4 class='card-title'><?php echo($_SESSION["firstname"] . ' ' . $_SESSION["lastname"]); ?>
                 <small><?php echo $_SESSION["whatsup"]; ?></small>
               </h4>
               <div class='card-links'>
-                <a class='fa fa-dribbble' href='#'></a>
-                <a class='fa fa-twitter' href='#'></a>
-                <a class='fa fa-facebook' href='#'></a>
+                <a role="button" class="btn btn-outline-primary" href="./changeinfo.php">Edit</a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="row mt-3">
-          <button type="button" class="btn btn-outline-primary">Primary</button>
         </div>
       </div>
       <!-- Right info/post end -->

@@ -49,7 +49,6 @@ is_logged_in();
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/changeinfo.php">Alter Info</a>
                 <a class="dropdown-item" ng-click="logoutCheck()">Logout</a>
               </div>
             </li>

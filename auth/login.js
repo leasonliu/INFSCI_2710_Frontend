@@ -63,9 +63,7 @@ $("#login").submit(function(e) {
                     data: 'login_status=20098&is_admin=' + user.is_admin +
                         '&uid=' + user.userID + '&nick=' + user.nickname +
                         '&fn=' + user.firstname + '&ln=' + user.lastname +
-                        '&s=' + user.gender + '&m=' + user.email +
-                        '&w=' + user.whatsup + '&dob=' + user.DOB +
-                        '&a=' + user.avatar,
+                        '&s=' + user.gender + '&m=' + user.email + '&dob=' + user.DOB,
 
                     success: function(data) {
                         if (data == 'GOOD')
