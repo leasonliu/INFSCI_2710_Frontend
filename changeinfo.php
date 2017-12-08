@@ -14,12 +14,12 @@ include('header.php');
     </div>
 
     <div ng-hide="!my_info" class="row">
-      <div class="mx-auto card">
+      <div class="mx-auto card mb-3">
         <div class="card-header bg-light text-dark">
           Change your info here, {{my_info.userID}}!
         </div>
         <div class="card-body">
-          <h4 class="card-title pb-3">Everything will be changed!</h4>
+          <h4 class="card-title pb-3">Avatar is ignored if not selected</h4>
           <form id="change-info" method="post" novalidate>
             <div class="form-group row">
               <label class="col-sm-4 col-form-label">Firstname</label>

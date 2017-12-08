@@ -47,7 +47,7 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
         });
     };
 
-    $('#form-new-whatsup').submit(function(e) {
+    $('#form-alter-whatsup').submit(function(e) {
         var wu = $('#whatsup-text').val();
 
         $.ajax({
@@ -64,9 +64,7 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
                         type: 'green',
                         autoClose: 'close|2000',
                         buttons: {
-                            close: function() {
-                                $('#whatsup-text').blur();
-                            }
+                            close: function() {}
                         }
                     });
                 } else {

@@ -43,16 +43,17 @@ include('header.php');
 
       <!-- Right info/post -->
       <div class="col-3">
-      <div ng-if="!my_info" class="alert alert-secondary text-center" role="alert">Loading your information...</div>
+        <div ng-if="!my_info" class="alert alert-secondary text-center" role="alert">Loading your information...</div>
         <div ng-if="my_info" class="row mt-3 mr-auto">
           <div class='card card-profile text-center'>
             <div class='card-img-top <?php if($_SESSION["gender"]==1) echo('bg-danger'); else echo('bg-dark'); ?>'></div>
             <div class='card-block'>
               <img alt='User avatar' height="150px" width="150px" class='card-img-profile img-fluid' src='<?php echo(SERVER_PREFIX); ?>{{ my_info.avatar }}'>
-              <h4 class='card-title'>{{ my_info.firstname + ' ' + my_info.lastname }}
-              <form class='whats-up' id="form-new-whatsup">
-                <input type="text" class="form-control-plaintext" id="whatsup-text" style="text-align: center;" value="{{ my_info.whatsup }}">
-              </form>
+              <h4 class='card-title'>
+                {{ my_info.firstname + ' ' + my_info.lastname }}
+                <form class='whats-up' id="form-alter-whatsup">
+                  <input onblur="$('#form-alter-whatsup').submit();" type="text" class="form-control-plaintext" id="whatsup-text" style="text-align: center;" value="{{ my_info.whatsup }}">
+                </form>
                 <small></br>E-Mail: {{my_info.email}}</br>DOB: {{my_info.DOB.substring(0,10)}}</small>
               </h4>
               <div class='card-links'>
