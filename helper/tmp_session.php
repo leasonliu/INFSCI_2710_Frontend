@@ -22,5 +22,6 @@ $_SESSION["gender"] = $_POST['s'];
 $_SESSION["dob"] = $_POST['dob'];
 $_SESSION["email"] = $_POST['m'];
 $_SESSION["whatsup"] = $_POST['w'];
+$_SESSION["avatar"] = $_POST['a'];
 
 echo 'GOOD';

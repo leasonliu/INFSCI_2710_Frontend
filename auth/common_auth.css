@@ -73,6 +73,7 @@ body {
 .form-signinup input[type=email],
 .form-signinup input[type=password],
 .form-signinup input[type=text],
+.form-signinup a,
 .form-signinup button {
     width: 100%;
     display: block;

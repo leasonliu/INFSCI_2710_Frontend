@@ -105,10 +105,10 @@ if(isset($_SESSION['login']) and $_SESSION["login"] == "ok") {
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-md-3">
-              <a href="./login.php" style="">Sign in</a>
+            <div class="form-group col-md-4">
+              <a href="./login.php" class="text-center">To sign-in</a>
             </div>
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-8">
               <button id="btn-signup" class="btn btn-lg btn-primary btn-block btn-signinup" type="submit">Finish sign up</button>
             </div>
           </div>

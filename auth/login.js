@@ -64,7 +64,8 @@ $("#login").submit(function(e) {
                         '&uid=' + user.userID + '&nick=' + user.nickname +
                         '&fn=' + user.firstname + '&ln=' + user.lastname +
                         '&s=' + user.gender + '&m=' + user.email +
-                        '&w=' + user.whatsup + '&dob=' + user.DOB,
+                        '&w=' + user.whatsup + '&dob=' + user.DOB +
+                        '&a=' + user.avatar,
 
                     success: function(data) {
                         if (data == 'GOOD')

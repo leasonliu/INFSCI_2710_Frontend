@@ -7,7 +7,7 @@ include('./leftmenu.php');
     <h1>Manage Users</h1>
 
     <div class="table-responsive">
-      <table class="table table-striped">
+      <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th>UID</th>
@@ -15,17 +15,16 @@ include('./leftmenu.php');
             <th>E-Mail</th>
             <th>Created Time</th>
             <th>Last Login</th>
-            <th>Is active</th>
+            <th>Delete User?</th>
           </tr>
         </thead>
         <tbody>
-          <!-- TODO: ng-repeat and Backend API -->
-          <tr>
-              <td>1</td>
-              <td>Idiot</td>
-              <td>tony@dreamprc.com</td>
-              <td>2017/12/06 18</td>
-              <td>2017/12/06 21</td>
+          <tr ng-repeat="i in all_users">
+              <td>{{ i.userID }}</td>
+              <td>{{ i.nickname }}</td>
+              <td>{{ i.email }}</td>
+              <td>{{ i.created_at }}</td>
+              <td>{{!i.updated_at ? 'Never' : i.updated_at }}</td>
               <td>1</td>
           </tr>
         </tbody>

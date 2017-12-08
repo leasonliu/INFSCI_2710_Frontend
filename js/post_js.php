@@ -3,6 +3,11 @@ include('../helper/auth.php');
 header('Content-Type: application/javascript');
 is_logged_in();
 ?>
+"use strict";
+
+// Prefix for easier debug
+var serverPrefix = 'http://127.0.0.1:8000';
+var localPrefix = 'http://127.0.0.1:8888';
 
 // Variable to store your files
 var serverPrefix = 'http://127.0.0.1:8000';
