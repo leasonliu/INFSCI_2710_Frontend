@@ -6,6 +6,12 @@ var localPrefix = 'http://127.0.0.1:8888';
 
 var uid = document.getElementById('_userID').innerHTML;
 
+var postConfig = {
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+    }
+};
+
 var defaultErrHandle = function(err) {
     console.log(err);
 };
@@ -28,6 +34,36 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
         .then(function(response) {
             $scope.viewable_posts = response.data.data;
         }, defaultErrHandle);
+
+    var buttonToLike = function(bL) {
+        bL.addClass('disabled');
+        bL.html('Liked!');
+    };
+
+    var buttonToUnlike = function(bL) {
+        bL.removeClass('disabled');
+        bL.html('Like');
+    };
+
+    // Like button login
+    $scope.buttonLikeDislike = function(id, pid) {
+        var bL = $('#post-button-like-' + id);
+        if (bL.hasClass('disabled')) {
+            $http.post(serverPrefix + '/like/cancel', "userID=" + uid + "&pid=" + pid, postConfig)
+                .then(function(response) {
+                    if (response.data.status == 200) {
+                        buttonToUnlike(bL);
+                    }
+                }, defaultErrHandle);
+        } else {
+            $http.post(serverPrefix + '/like/', "userID=" + uid + "&pid=" + pid, postConfig)
+                .then(function(response) {
+                    if (response.data.status == 200) {
+                        buttonToLike(bL);
+                    }
+                }, defaultErrHandle);
+        }
+    };
 
     $scope.logoutCheck = function() {
         $ngConfirm({

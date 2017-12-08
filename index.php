@@ -5,7 +5,7 @@ include('header.php');
   <main role="main" class="container-fluid">
     <div class="row">
       <div class="col-3 mt-3">
-        <div>It's a placeholder. Could be some ads or other info here...</div>
+        <div>It's a placeholder.<hr></br>Could be some ads or other info here in the further release...</div>
       </div>
 
       <!-- Left main feeds -->
@@ -21,7 +21,10 @@ include('header.php');
                   <img src="<?php echo SERVER_PREFIX; ?>{{ i.avatar }}" class="moment-profile-avatar" alt="Post user avatar">
               </figure>
               <h4 class="moment-card-title">{{ i.userID }}</h4>
-              <div class="moment-card-text"><span class="text-muted">Thoughts:</span> {{ i.contents }}</div>
+              <div class="moment-card-text">
+                <span class="text-muted">Thoughts:</span> {{ i.contents }}
+                <button id="post-button-report" style="margin-top: -20px;" type="button" class="btn btn-outline-light text-secondary float-right btn-sm">Report</button>
+              </div>
             </div>
             <div>
               <!-- Click to view post -->
@@ -31,7 +34,8 @@ include('header.php');
             </div>
             <div class="moment-card-footer">
               <small>Post on: {{ i.timestamp }}</small>
-              <button id="post-button-like" class="btn btn-danger float-right btn-sm">Like</button>
+              <button id="post-button-like-{{$index}}" ng-click="buttonLikeDislike($index, i.pid)"
+                class="btn btn-danger float-right btn-sm post-button-like">Like</button>
             </div>
           </div>
         </div>

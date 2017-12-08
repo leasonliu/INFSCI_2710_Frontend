@@ -13,7 +13,7 @@ var postConfig = {
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
     }
-}
+};
 
 var defaultErrHandle = function(err) {
     console.log(err);

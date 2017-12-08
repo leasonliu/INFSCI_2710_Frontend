@@ -100,7 +100,7 @@ body>.container-fluid {
     margin: 0;
     padding: 5px 1em;
     border: none;
-    border-bottom: 1px solid rgba(34, 36, 38, .1);
+    border-bottom: 1px dotted rgba(34, 36, 38, .1);
     box-shadow: none;
 }
 
@@ -133,7 +133,7 @@ body>.container-fluid {
     max-width: 100%;
     padding: .75em 1em;
     color: rgba(0, 0, 0, .4);
-    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    border-top: 1px dotted rgba(0, 0, 0, .05) !important;
     background: #fff;
 }
 
@@ -171,4 +171,8 @@ body>.container-fluid {
     display: inline-block;
     margin-left: 4px;
     vertical-align: bottom;
+}
+
+.post-button-like {
+    width: 5em;
 }
