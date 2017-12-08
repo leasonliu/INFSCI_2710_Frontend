@@ -61,9 +61,7 @@ $("#login").submit(function(e) {
                     url: localPrefix + '/helper/tmp_session.php',
                     type: 'POST',
                     data: 'login_status=20098&is_admin=' + user.is_admin +
-                        '&uid=' + user.userID + '&nick=' + user.nickname +
-                        '&fn=' + user.firstname + '&ln=' + user.lastname +
-                        '&s=' + user.gender + '&m=' + user.email + '&dob=' + user.DOB,
+                        '&uid=' + user.userID + '&s=' + user.gender,
 
                     success: function(data) {
                         if (data == 'GOOD')
