@@ -6,21 +6,23 @@ include('./leftmenu.php');
   <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
     <h1>Manage Posts</h1>
 
-    <div class="table-responsive">
+    <div ng-if="!all_posts" class="alert alert-primary text-center" role="alert">Loading data...</div>
+    <div ng-show="all_posts" class="table-responsive">
       <table class="table table-striped">
-        <thead>
+        <thead class="thead-light">
           <tr>
-            <th>PID</th>
-            <th>UID</th>
-            <th>Picture</th>
-            <th>Contents</th>
-            <th>Post time</th>
-            <th>Delete?</th>
+            <th scope="col">#</th>
+            <th scope="col">PID</th>
+            <th scope="col">UID</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Contents</th>
+            <th scope="col">Post time</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
         <tbody>
-          <!-- TODO: ng-repeat and Backend API -->
-          <tr>
+          <tr ng-repeat="i in all_posts">
+            <th scope="row">{{$index +1}}</th>
             <td>1</td>
             <td>Idiot</td>
             <td>tony@dreamprc.com</td>

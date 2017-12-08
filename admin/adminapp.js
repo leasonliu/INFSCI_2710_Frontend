@@ -9,6 +9,12 @@ $("#sidebar-nav a").on("click", function() {
     $(this).addClass("active");
 });
 
+var postConfig = {
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+    }
+}
+
 var defaultErrHandle = function(err) {
     console.log(err);
 };
@@ -20,6 +26,12 @@ app.controller('pmAdmin', function($scope, $http, $ngConfirm) {
     $scope.all_users = "";
     $scope.all_reports = "";
     $scope.dash_stat = "";
+
+    // Get stats
+    $http.get(serverPrefix + '/admin/')
+        .then(function(response) {
+            $scope.dash_stat = response.data.data;
+        }, defaultErrHandle);
 
     // Get all users
     $http.get(serverPrefix + '/admin/users')
@@ -39,43 +51,45 @@ app.controller('pmAdmin', function($scope, $http, $ngConfirm) {
             $scope.all_reports = response.data.data;
         }, defaultErrHandle);
 
-    // Get stats
-    $http.get(serverPrefix + '/admin/')
-        .then(function(response) {
-            $scope.dash_stat = response.data.data;
-        }, defaultErrHandle);
-
-    $scope.deleteUser = function(uid) {
-
-    };
-
-    $scope.test = function() {
-        $scope.name = 'Sia: cheap thrills';
+    $scope.inactiveUser = function(uid) {
         $ngConfirm({
-            title: 'Confirm!',
-            content: '<strong>{{name}}</strong> is my favourite song',
-            scope: $scope,
+            title: 'Inactiving ' + uid + '!',
+            content: 'You are about to inactive "' + uid + '", proceed?',
+            type: 'red',
+            typeAnimated: true,
             buttons: {
-                sayBoo: {
-                    text: 'Say Booo',
-                    btnClass: 'btn-blue',
-                    action: function(scope, button) {
-                        scope.name = 'Booo!!';
-                        return false; // prevent close;
+                tryAgain: {
+                    text: 'Yes block',
+                    btnClass: 'btn-red',
+                    action: function() {
+                        $http.post(serverPrefix + '/admin/blockOrRecoverUsers', "userID=" + uid, postConfig)
+                            .then(function(response) { location.reload(); }, defaultErrHandle);
                     }
                 },
-                somethingElse: {
-                    text: 'Something else',
-                    btnClass: 'btn-orange',
-                    action: function(scope, button) {
-                        $ngConfirm('You clicked on something else');
-                    }
-                },
-                close: function(scope, button) {
-                    // closes the modal
-                },
+                close: function() {}
             }
         });
     };
+
+    $scope.restoreUser = function(uid) {
+        $ngConfirm({
+            title: 'Restoring ' + uid + '!',
+            content: 'You are about to restore "' + uid + '", proceed?',
+            type: 'green',
+            typeAnimated: true,
+            buttons: {
+                tryAgain: {
+                    text: 'Yes restore',
+                    btnClass: 'btn-green',
+                    action: function() {
+                        $http.post(serverPrefix + '/admin/blockOrRecoverUsers', "userID=" + uid, postConfig)
+                            .then(function(response) { location.reload(); }, defaultErrHandle);
+                    }
+                },
+                close: function() {}
+            }
+        });
+    };
+
 
 });

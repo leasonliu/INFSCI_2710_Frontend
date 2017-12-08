@@ -6,28 +6,42 @@ include('./leftmenu.php');
   <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
     <h1>Overview</h1>
 
-    <section class="row text-center placeholders">
+    <div ng-if="!dash_stat" class="alert alert-primary text-center" role="alert">Loading data...</div>
+    <section ng-show="dash_stat" class="row text-center placeholders">
+
       <div class="col-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <div class="text-muted">Something else</div>
+        <div class="progress">
+          <div class="progress-value bg-primary">{{dash_stat[0].users}}</div>
+        </div>
+        <h4>Total users</h4>
       </div>
+
       <div class="col-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
+        <div class="progress">
+          <div class="progress-value">{{dash_stat[1].blockedusers}}</div>
+        </div>
+        <h4>Blocked users</h4>
       </div>
+
       <div class="col-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
+        <div class="progress">
+          <div class="progress-value bg-secondary">{{dash_stat[2].posts}}</div>
+        </div>
+        <h4>Total posts</h4>
       </div>
+
       <div class="col-6 col-sm-3 placeholder">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-        <h4>Label</h4>
-        <span class="text-muted">Something else</span>
+        <div class="progress">
+          <div class="progress-value bg-info">{{dash_stat[3].comments}}</div>
+        </div>
+        <h4>Total comments</h4>
       </div>
+
     </section>
+
+    <div class="alert alert-secondary" role="alert">
+      This page will display some basic information related to the website!
+    </div>
 
   </main>
 
