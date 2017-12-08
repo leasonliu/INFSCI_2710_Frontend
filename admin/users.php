@@ -15,7 +15,7 @@ include('./leftmenu.php');
             <th>E-Mail</th>
             <th>Created Time</th>
             <th>Last Login</th>
-            <th>Delete User?</th>
+            <th>Block User?</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@ include('./leftmenu.php');
               <td>{{ i.email }}</td>
               <td>{{ i.created_at }}</td>
               <td>{{!i.updated_at ? 'Never' : i.updated_at }}</td>
-              <td>1</td>
+              <td ng-click="test()">1</td>
           </tr>
         </tbody>
       </table>
