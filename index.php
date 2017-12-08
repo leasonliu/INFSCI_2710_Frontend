@@ -35,8 +35,8 @@ include('header.php');
             </div>
             <div class="moment-card-footer">
               <small>Post on: {{ i.timestamp }}</small>
-              <button id="post-button-like-{{$index}}" ng-click="buttonLikeDislike($index, i.pid)"
-                class="btn btn-danger float-right btn-sm post-button-like">Like</button>
+              <button ng-if="i.liked==0" id="post-button-like-{{$index}}" ng-click="buttonLikeDislike($index, i.pid)" class="btn btn-danger float-right btn-sm post-button-like">Like</button>
+              <button ng-if="i.liked!=0" id="post-button-like-{{$index}}" ng-click="buttonLikeDislike($index, i.pid)" class="btn btn-danger float-right btn-sm post-button-like disabled">Liked!</button>
             </div>
           </div>
         </div>
