@@ -20,10 +20,11 @@ include('header.php');
               <figure class="moment-profile moment-profile-inline">
                   <img src="<?php echo SERVER_PREFIX; ?>{{ i.avatar }}" class="moment-profile-avatar" alt="Post user avatar">
               </figure>
-              <h4 class="moment-card-title">{{ i.userID }}</h4>
+              <h4 class="moment-card-title">{{ i.nickname }}</h4>
               <div class="moment-card-text">
                 <span class="text-muted">Thoughts:</span> {{ i.contents }}
-                <button id="post-button-report" style="margin-top: -20px;" type="button" class="btn btn-outline-light text-secondary float-right btn-sm">Report</button>
+                <button id="post-button-report" style="margin-top: -20px;" ng-click="reportPost(i.pid, i.userID)"
+                  type="button" class="btn btn-outline-light text-secondary float-right btn-sm">Report</button>
               </div>
             </div>
             <div>

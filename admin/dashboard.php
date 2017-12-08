@@ -25,16 +25,16 @@ include('./leftmenu.php');
 
       <div class="col-6 col-sm-3 placeholder">
         <div class="progress">
-          <div class="progress-value bg-danger">{{dash_stat[2].posts}}</div>
+          <div class="progress-value bg-info">{{dash_stat[2].posts}}</div>
         </div>
         <h4>Total posts</h4>
       </div>
 
       <div class="col-6 col-sm-3 placeholder">
         <div class="progress">
-          <div class="progress-value bg-info">{{dash_stat[3].comments}}</div>
+          <div class="progress-value bg-danger">{{dash_stat[3].reports}}</div>
         </div>
-        <h4>Total comments</h4>
+        <h4>Total reports</h4>
       </div>
 
     </section>
