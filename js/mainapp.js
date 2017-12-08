@@ -15,11 +15,19 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
 
     $scope.serverPrefix = serverPrefix;
     $scope.my_info = "";
+    $scope.viewable_posts = "";
 
     // Get myinfo
     $http.get(serverPrefix + '/my/' + uid)
         .then(function(response) {
             $scope.my_info = response.data.data[0];
+        }, defaultErrHandle);
+
+    // Get posts available to me
+    $http.get(serverPrefix + '/post/' + uid)
+        .then(function(response) {
+            $scope.viewable_posts = response.data.data;
+            console.log($scope.viewable_posts);
         }, defaultErrHandle);
 
     $scope.logoutCheck = function() {

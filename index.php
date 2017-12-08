@@ -2,24 +2,35 @@
 include('header.php');
 ?>
 
-  <div ng-if="!my_info" class="alert alert-primary text-center" role="alert">Loading PittMoments app...</div>
   <main role="main" class="container-fluid">
     <div class="row">
       <div class="col-3"></div>
 
       <!-- Left main feeds -->
-      <div class="col-6 clearfix mt-3">
+      <div class="col-6 mt-3">
 
+        <div ng-if="!viewable_posts" class="alert alert-primary text-center" role="alert">Loading feeds data...</div>
         <!-- Change with correct grid/laout and ng-repeat -->
-        <div>
-          <div class="card" style="width: 20rem;">
-            <img class="card-img-top" src="http://sci.pitt.edu/wp-content/uploads/2015/10/Pelechrinis-_-Homepage.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Pitt SCI!</p>
+        <div ng-show="viewable_posts" class="form-group" ng-repeat="i in viewable_posts">
+          <div class="moment-card moment-card-inverse moment-card-info">
+            <div class="text-center">
+              <img class="moment-card-img-top" src="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}">
+            </div>
+            <div class="moment-card-block">
+              <figure class="moment-profile moment-profile-inline">
+                  <img src="http://success-at-work.com/wp-content/uploads/2015/04/free-stock-photos.gif" class="moment-profile-avatar" alt="">
+              </figure>
+              <h4 class="moment-card-title">{{ i.userID }}</h4>
+              <div class="moment-card-text">{{ i.contents }}</div>
+            </div>
+            <div class="moment-card-footer">
+              <small>Post on: {{ i.timestamp }}</small>
+              <button id="post-button-like" class="btn btn-danger float-right btn-sm">Like</button>
             </div>
           </div>
         </div>
 
+        
       </div>
       <!-- Left main feeds end -->
 
