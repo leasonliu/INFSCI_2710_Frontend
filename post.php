@@ -27,8 +27,11 @@ include('header.php');
             </div>
             <div class="form-group">
               <textarea class="form-control" id="contents" rows="3" required placeholder="What's your thoughs?"></textarea>
+              <div class="invalid-feedback">
+                You must write something...
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="btn-post">Post!</button>
+            <button type="submit" class="btn btn-primary btn-block" id="btn-post">Post!</button>
           </form>
         </div>
       </div>

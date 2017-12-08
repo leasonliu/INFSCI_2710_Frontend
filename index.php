@@ -31,7 +31,8 @@ include('header.php');
                 <small><?php echo $_SESSION["whatsup"]; ?></small>
               </h4>
               <div class='card-links'>
-                <a role="button" class="btn btn-outline-primary" href="./changeinfo.php">Edit</a>
+                <a role="button" class="btn btn-outline-success btn-block" href="./post.php">Post</a>
+                <a role="button" class="btn btn-outline-primary btn-block" href="./changeinfo.php">Edit</a>
               </div>
             </div>
           </div>
