@@ -57,6 +57,7 @@ window.addEventListener('load', function() {
 
 $("#new-post").submit(function(e) {
     e.preventDefault();
+    $('#btn-post').addClass('disabled');
 
     var text = $('#contents').val();
 
@@ -78,11 +79,22 @@ $("#new-post").submit(function(e) {
             processData: false,
 
             success: function(data) {
-
+                if (data.status == '200') {
+                    $('#postOkModal').modal('show');
+                    document.getElementById('new-post').reset();
+                    document.getElementById('file-name').innerHTML = '';
+                    pic = '';
+                    $('#btn-post').removeClass('disabled');
+                } else {
+                    showErrMsg('');
+                    $('#btn-post').removeClass('disabled');
+                    console.log(data);
+                }
             },
 
             error: function(err) {
                 showErrMsg('');
+                $('#btn-post').removeClass('disabled');
                 console.log(err);
             },
 
@@ -91,6 +103,7 @@ $("#new-post").submit(function(e) {
     };
     reader.onerror = function(error) {
         showErrMsg('File encode failed');
+        $('#btn-post').removeClass('disabled');
     };
 
 });

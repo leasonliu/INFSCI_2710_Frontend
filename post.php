@@ -3,6 +3,7 @@ include('header.php');
 ?>
 
   <div class="container">
+
     <div class="row" style="margin-top: 15px;">
       <div class="col-12 col-md-8"></div>
       <div class="col-6 col-md-4">
@@ -11,6 +12,7 @@ include('header.php');
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="mx-auto card">
         <div class="card-header bg-primary text-light">
@@ -36,6 +38,28 @@ include('header.php');
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="postOkModal" tabindex="-1" role="dialog" aria-labelledby="postOkModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="postOkModalLabel">Post successfully!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Click 'Nice!' to go back to home page, or post a new moment!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a role="button" class="btn btn-primary" href="./index.php">Nice!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End -->
 
   </div>
 
