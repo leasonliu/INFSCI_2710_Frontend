@@ -19,7 +19,7 @@ include('header.php');
           Post something
         </div>
         <div class="card-body">
-          <h4 class="card-title">Show your moments!</h4>
+          <h4 class="card-title">{{ my_info.nickname }}, show your moments!</h4>
           <form id="new-post" method="post" novalidate>
             <div class="form-group">
               <label class="custom-file">

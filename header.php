@@ -22,6 +22,7 @@ is_logged_in();
   <body ng-app="pmApp" ng-controller="pmIndex">
 
     <header>
+      <div id="_userID" style="display:none"><?php echo($_SESSION["userid"]); ?></div>
       <nav id="home-nav" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">PittMoments</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +31,7 @@ is_logged_in();
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <span class="navbar-text">
-              Hi <?php echo($_SESSION['nickname']); ?>!
+              Hi {{ my_info.nickname }}!
             </span>
           </ul>
           <ul class="navbar-nav ml-auto">
@@ -49,7 +50,7 @@ is_logged_in();
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" ng-click="logoutCheck()">Logout</a>
+                <a class="dropdown-item" ng-click="logoutCheck()" href='#'>Logout</a>
               </div>
             </li>
           </ul>
