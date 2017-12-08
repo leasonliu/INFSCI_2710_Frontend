@@ -4,14 +4,15 @@ include('header.php');
 
   <main role="main" class="container-fluid">
     <div class="row">
-      <div class="col-3"></div>
+      <div class="col-2"></div>
 
       <!-- Left main feeds -->
-      <div class="col-6 mt-3">
+      <div class="col-7 mt-3">
 
         <div ng-if="!viewable_posts" class="alert alert-primary text-center" role="alert">Loading feeds data...</div>
+        <div ng-if="viewable_posts && viewable_posts.length==0" class="alert alert-secondary text-center" role="alert">Currently, there are no posts for you!</div>
         <!-- Change with correct grid/laout and ng-repeat -->
-        <div ng-show="viewable_posts" class="form-group" ng-repeat="i in viewable_posts">
+        <div ng-show="viewable_posts.length>0" class="form-group" ng-repeat="i in viewable_posts">
           <div class="moment-card moment-card-inverse moment-card-info">
             <div class="text-center">
               <img class="moment-card-img-top" src="<?php echo SERVER_PREFIX ?>{{ i.pic_id }}">
