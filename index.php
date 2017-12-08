@@ -3,18 +3,20 @@ include('header.php');
 ?>
 
   <div ng-if="!my_info" class="alert alert-primary text-center" role="alert">Loading PittMoments app...</div>
-  <main role="main" class="container">
+  <main role="main" class="container-fluid">
     <div class="row">
-      <div class="col-2"></div>
+      <div class="col-3"></div>
 
       <!-- Left main feeds -->
-      <div class="col-7 clearfix mt-3">
+      <div class="col-6 clearfix mt-3">
 
         <!-- Change with correct grid/laout and ng-repeat -->
-        <div class="card" style="width: 20rem;">
-          <img class="card-img-top" src="http://sci.pitt.edu/wp-content/uploads/2015/10/Pelechrinis-_-Homepage.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Pitt SCI!</p>
+        <div>
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top" src="http://sci.pitt.edu/wp-content/uploads/2015/10/Pelechrinis-_-Homepage.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Pitt SCI!</p>
+            </div>
           </div>
         </div>
 

@@ -31,7 +31,7 @@ check_permission(1);
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <span class="navbar-text">
-              Hi <?php echo($_SESSION['nickname']); ?>!
+              Welcome to the admin panel!
             </span>
           </ul>
           <ul class="navbar-nav ml-auto">

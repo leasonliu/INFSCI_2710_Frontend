@@ -17,18 +17,17 @@ include('./leftmenu.php');
             <th scope="col">Which Post</th>
             <th scope="col">Reason</th>
             <th scope="col">When</th>
-            <th scope="col">Process</th>
+            <!-- Report what to do? -->
           </tr>
         </thead>
         <tbody>
         <tr ng-repeat="i in all_reports">
             <th scope="row">{{$index +1}}</th>
-            <td>tony</td>
-            <td>user1</td>
-            <td>1</td>
-            <td>Too many fucks</td>
-            <td>2017/12/06 21</td>
-            <td>1</td>
+            <td>{{ i.er_userID }}</td>
+            <td>{{ i.ee_userID }}</td>
+            <td>{{ i.pid }}</td>
+            <td>{{ i.reasons }}</td>
+            <td>{{ i.timestamp }}</td>
           </tr>
         </tbody>
       </table>
