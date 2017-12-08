@@ -54,7 +54,7 @@ body>.container {
 }
 
 .card-profile .card-title {
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 
 .card-profile .card-title small {
@@ -66,4 +66,14 @@ body>.container {
 .card-profile .card-links {
     margin-bottom: 30px;
     padding: 0px 30px;
+}
+
+
+/**
+* What's up changing
+*/
+
+.whats-up {
+    font-weight: 500;
+    font-size: 70%;
 }

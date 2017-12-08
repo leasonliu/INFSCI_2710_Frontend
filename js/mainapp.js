@@ -41,3 +41,24 @@ app.controller('pmIndex', function($scope, $http, $ngConfirm) {
     };
 
 });
+
+$('#form-new-whatsup').submit(function(e) {
+    var wu = $('#whatsup-text').val();
+
+    $.ajax({
+        url: serverPrefix + '/my/whatsup',
+        data: 'userID=' + uid + '&whatsup=' + wu,
+        type: 'POST',
+
+        success: function(data) {
+            if (data.status == '200') {
+                location.reload();
+            }
+        },
+
+        error: function(err) {
+            console.log(err);
+        },
+    });
+
+});
